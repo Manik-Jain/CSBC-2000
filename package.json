@@ -1,0 +1,29 @@
+{
+  "name": "csbc-2000",
+  "version": "1.0.0",
+  "description": "CSBC-2000 : Assignment_1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Manik-Jain/CSBC-2000.git"
+  },
+  "keywords": [
+    "Manik-Jain",
+    "Manik",
+    "Jain",
+    "manik",
+    "jain",
+    "blockchain",
+    "JS",
+    "js"
+  ],
+  "author": "Manik-Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Manik-Jain/CSBC-2000/issues"
+  },
+  "homepage": "https://github.com/Manik-Jain/CSBC-2000#readme"
+}
