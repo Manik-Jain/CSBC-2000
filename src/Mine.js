@@ -16,5 +16,6 @@ export default class Mine {
         blockChain.mine();
 
         console.log(blockChain.chain);
+        console.log(blockChain.getAverageHashRate());
     }
 }

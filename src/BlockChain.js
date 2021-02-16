@@ -172,4 +172,10 @@ import Block from '../model/Block.js';
     getMerkleRoot(leaf) {
         return new MerkleTree([leaf].map(x => sha256(x)), sha256).getHexRoot();
     }
+
+    getAverageHashRate() {
+        let totalTime = 0;
+        this.chain.forEach(entry => totalTime += entry.timestamp)
+        return (((totalTime/this.chain.length) / 10000)%60).toFixed(0) + 'ms';
+    }
 }
