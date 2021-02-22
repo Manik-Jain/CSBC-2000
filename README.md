@@ -16,7 +16,7 @@ This project aims at exposing a Merkle Tree inspired Blockchain.
 # Usage
 In order to run the code, please git clone the repository, and in your terminal type the following command
 
-npm run start
+```npm run start```
 
 This will install all the necessary packages to your machine, and add a (dummy) freshly mined block to the chain.
 In order to try all the features provided, please navigate to src/Mine.js, and make the necessary changes.
