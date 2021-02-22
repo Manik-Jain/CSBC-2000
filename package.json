@@ -29,7 +29,6 @@
   },
   "homepage": "https://github.com/Manik-Jain/CSBC-2000#readme",
   "dependencies": {
-    "ethereumjs-wallet": "^1.0.1",
     "js-sha256": "^0.9.0",
     "path": "^0.12.7"
   }

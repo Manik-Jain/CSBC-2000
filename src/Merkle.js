@@ -41,9 +41,12 @@ export default class MerkleMTree {
             let right = i + 1 === transactions.length ? left : transactions[i + 1];
 
             if (isHashRequired) {
-
                 left = typeof left === 'object' ? sha256(JSON.stringify(left)) : sha256(left);
                 right = typeof right === 'object' ? sha256(JSON.stringify(right)) : sha256(right);
+                transactions[i].txnHash = left;
+                if(transactions[i+1] != undefined) {
+                    transactions[i+1].txnHash = right;
+                }
             }
 
             this.leaves.push([...new Set([left, right])])

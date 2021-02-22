@@ -1,4 +1,5 @@
 import uuid from 'uuid';
+import sha256 from 'js-sha256';
 
 /**
  * A blockchain transaction. Has an amount, sender and a
@@ -14,5 +15,6 @@ export default class Transaction {
         this.recipient = address.recipient;
         this.tx_id = uuid();
         this.fees = fees <= 20000 ? 20000 : fees;
+        this.txnHash = '';
     }
 }

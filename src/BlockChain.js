@@ -112,14 +112,14 @@ export default class Blockchain {
         this.nonce = 0;
         let prevHash = await this.getPreviousHash();
         let merkleTree = new MerkleMTree().createMerkleTree(this.pendingTransactions);
-        let txnHash = merkleTree.root;
+        let merkleRoot = merkleTree.root;
 
-        let hash = sha256(prevHash + txnHash + this.nonce);
+        let hash = sha256(prevHash + merkleRoot + this.nonce);
         let difficultyParam = this.difficultyParam();
 
         while (hash.toString().substring(0, this.difficulty) != difficultyParam) {
             ++this.nonce;
-            hash = sha256(prevHash + txnHash + this.nonce);
+            hash = sha256(prevHash + merkleRoot + this.nonce);
         }
 
         this.timestamp = Math.floor(Date.now() / 1000);
@@ -185,7 +185,9 @@ export default class Blockchain {
                 return false;
             } else if (i > 0) {
                 //verify if merkle root value for current block can be obtained by the given set of transactions
-                if (chain[i].merkleRoot !== new MerkleMTree().createMerkleTree(chain[i].transactions).root) {
+                let blockTxnHashes = [];
+                chain[i].transactions.forEach(entry => blockTxnHashes.push(entry.txnHash));
+                if (chain[i].merkleRoot !== new MerkleMTree().createMerkleTree(blockTxnHashes, false).root) {
                     console.log(`Merkle root value at block ${i+1} does not verify..!!`)
                     return false;
                 }

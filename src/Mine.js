@@ -9,48 +9,19 @@ export default class Mine {
         const blockChain = await new BlockChain();
         const wallet = new Wallet();
 
-        // await blockChain.mineGenesisBlock();
-        
-        // blockChain.createTransaction(210, wallet.getAddressPair());
-        // blockChain.createTransaction(220, wallet.getAddressPair());
-        // blockChain.createTransaction(230, wallet.getAddressPair());
-        // blockChain.createTransaction(240, wallet.getAddressPair());
-        // blockChain.createTransaction(250, wallet.getAddressPair());
+        //generate a Genesis block if one doesn't exist
+        await blockChain.mineGenesisBlock();
 
-        // await blockChain.mine();
+        //creating transactions on blockchain
+        blockChain.createTransaction(1, wallet.getAddressPair());
+        blockChain.createTransaction(2, wallet.getAddressPair());
 
-        // blockChain.createTransaction(211, wallet.getAddressPair());
-        // blockChain.createTransaction(221, wallet.getAddressPair());
-        // blockChain.createTransaction(241, wallet.getAddressPair());
-        // blockChain.createTransaction(251, wallet.getAddressPair());
-        
-        // await blockChain.mine();
-
-        // blockChain.createTransaction(2211, wallet.getAddressPair());
-        // blockChain.createTransaction(2221, wallet.getAddressPair());
-        // blockChain.createTransaction(2321, wallet.getAddressPair());
-        // blockChain.createTransaction(2421, wallet.getAddressPair());
-        // blockChain.createTransaction(2521, wallet.getAddressPair());
-        
-        // await blockChain.mine();
-
-        // blockChain.createTransaction(1, wallet.getAddressPair());
-        // await blockChain.mine();
-
-        // blockChain.createTransaction(2, wallet.getAddressPair());
-        // await blockChain.mine();
-
-        // blockChain.createTransaction(3, wallet.getAddressPair());
-        // await blockChain.mine();
-
-        // blockChain.createTransaction(4, wallet.getAddressPair());
-        // await blockChain.mine();
-
-        blockChain.createTransaction(5, wallet.getAddressPair());
+        //Mine block
         await blockChain.mine();
         
-        // let isValidTransaction = await blockChain.verifyTransactionHash(9, '5d2ee5bdcb0bb1ed4bb3c5cb772d17dcc2d498608a29439aa79807ac75f630b2');
-        // console.log(isValidTransaction);
-    
+        //verify using Merkle Tree, if a transaction is part of a block
+        console.log('Verifying if a given hash : [139f3d0268b27eba357b7e258cba4e653132ff76264deb8f7ace8fcff5df0f3b] is part of block 2.')
+        let isValidTransaction = await blockChain.verifyTransactionHash(2, '139f3d0268b27eba357b7e258cba4e653132ff76264deb8f7ace8fcff5df0f3b');
+        console.log(isValidTransaction);
     }
 }
