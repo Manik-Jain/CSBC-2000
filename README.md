@@ -2,7 +2,7 @@
 
 This project aims at exposing a Merkle Tree inspired Blockchain.
 
-#Features
+# Features
 1. Genesis Block Creation
 2. Creating transaction on Blockchain
 3. Dynamic block hash difficulty parameter
@@ -13,10 +13,13 @@ This project aims at exposing a Merkle Tree inspired Blockchain.
 8. Maintinaing a local copy of blokchain that can be distributed to other nodes in the peer-to-peer network
 9. Wallet based key storage
 
-#Usage
+# Usage
 In order to run the code, please git clone the repository, and in your terminal type the following command
 
 npm run start
 
 This will install all the necessary packages to your machine, and add a (dummy) freshly mined block to the chain.
 In order to try all the features provided, please navigate to src/Mine.js, and make the necessary changes.
+
+# Developer note
+The codebase will be further enhanced to incorporate IPFS capabilities so that the local copy of chain can be distributed in the network.
