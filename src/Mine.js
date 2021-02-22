@@ -1,5 +1,4 @@
 import BlockChain from './BlockChain.js';
-import sha256 from 'js-sha256';
 import Wallet from '../model/Wallet.js';
 
 export default class Mine {

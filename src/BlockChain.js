@@ -1,5 +1,5 @@
-import MerkleMTree from './Merkle.js'
 import sha256 from 'js-sha256';
+import MerkleMTree from './Merkle.js'
 import Transaction from '../model/Transaction.js';
 import Block from '../model/Block.js';
 import Helper from './Helper.js'

@@ -12,6 +12,7 @@ This project aims at exposing a Merkle Tree inspired Blockchain.
 7. Maintaining a Merkle Tree for each block's transactions
 8. Maintinaing a local copy of blokchain that can be distributed to other nodes in the peer-to-peer network
 9. Wallet based key storage
+10. Block Fee calculation
 
 # Usage
 In order to run the code, please git clone the repository, and in your terminal type the following command
